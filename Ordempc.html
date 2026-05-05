@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FICHA ORDEM CODICE</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>GERAL</h1>
+<label>NOME DO PERSONAGEM<input id="nome" placeholder="">
+<label>CLASSE<input id="classe" placeholder="">
+<label>ORIGEM<input id="origem" placeholder="">
+
+<h1>Combate</h1>
+
+<div class="grid">
+    <div><label>HP Atual</label><input id="hp_atual" type="number"></div>
+    <div><label>HP Máx</label><input id="hp_max" type="number"></div>
+
+</div>
+
+<div class="grid">
+    <div><label>Sanidade Atual</label><input id="san_atual" type="number"></div>
+    <div><label>Sanidade Máx</label><input id="san_max" type="number"></div>
+
+</div>
+
+<div class="grid">
+    <div><label>PE Atual</label><input id="pe_atual" type="number"></div>
+    <div><label>PE Máx</label><input id="pe_max" type="number"></div>
+    <div><label>PE Turno</label><input id="pepdturno" type="number"></div>
+</div>
+
+<div class="grid">
+    <div><label>PD Atual</label><input id="pd_atual" type="number"></div>
+    <div><label>PD Máx</label><input id="pd_max" type="number"></div>
+    <div><label>PD Turno</label><input id="pepdturno" type="number"></div>
+</div>
+
+<div class="grid">
+    <div><label>Defesa</label><input id="defesa" type="number"></div>
+    <div><label>Bloqueio</label><input id="bloqueio" type="number"></div>
+    <div><label>Esquiva</label><input id="esquiva" type="number"></div>
+</div>
+<label>ARMA 1<input id="arma1">
+<label>ARMA 2<input id="arma2">
+<label>ARMA 3<input id="arma3">
+
+
+<h1>Atributos</h1>
+
+<div class="grid">
+    <div><label>FOR</label><input id="for" type="number"></div>
+    <div><label>AGI</label><input id="agi" type="number"></div>
+    <div><label>INT</label><input id="int" type="number"></div>
+    <div><label>VIG</label><input id="vig" type="number"></div>
+    <div><label>PRE</label><input id="pre" type="number"></div>
+    <div><label>DESLOCAMENTO EM METROS</label><input id="desl" type="number"></div>
+    <div><label>NIVEL</label><input id="nivel" type="number"></div>
+    <div><label>NEX</label><input id="nex" type="number"></div>
+</div>
+<h1>Perícias
+        <div>
+        <div><label>+ PENALIDADE DE CARGA. * SOMENTE TREINADAS</label></div>
+    </div>
+</h1>
+
+<div class="grid">
+
+    <div><label>ACOBRACIA+(AGI)</label><input id="acobracia" type="number"></div>
+    <div><label>ADESTRAMENTO*(PRE)</label><input id="adestramento" type="number"></div>
+    <div><label>ARTES*(PRE)</label><input id="artes" type="number"></div>
+    <div><label>ATLETISMO(FOR)</label><input id="atletismo" type="number"></div>
+    <div><label>CIENCIAS*(INT)</label><input id="ciencias" type="number"></div>
+    <div><label>CRIME*+(AGI)</label><input id="crime" type="number"></div>
+    <div><label>DIPLOMACIA(PRE)</label><input id="diplomacia" type="number"></div>
+    <div><label>ENGANAÇÃO(PRE)</label><input id="enganacao" type="number"></div>
+    <div><label>FORTITUDE(VIG)</label><input id="fortitude" type="number"></div>
+    <div><label>FURTIVIDADE+(AGI)</label><input id="furtividade" type="number"></div>
+    <div><label>INCIATIVA(AGI)</label><input id="iniciativa" type="number"></div>
+    <div><label>INTIMIDAÇÃO(PRE)</label><input id="intimidacao" type="number"></div>
+    <div><label>INTUIÇÃO+(PRE)</label><input id="intuicao" type="number"></div>
+    <div><label>INVESTIGAÇÃO(INT)</label><input id="investigacao" type="number"></div>
+    <div><label>LUTA(FOR)</label><input id="luta" type="number"></div>
+    <div><label>MEDICINA(INT)</label><input id="medicina" type="number"></div>
+    <div><label>OCULTISMO*(PRE)</label><input id="ocultismo" type="number"></div>
+    <div><label>PILOTAGEM*(AGI)</label><input id="pilotagem" type="number"></div>
+    <div><label>REFLEXOS(AGI)</label><input id="reflexos" type="number"></div>
+    <div><label>RELIGIÃO(PRE)</label><input id="religiao" type="number"></div>
+    <div><label>SOBREVIVÊNCIA(INT)</label><input id="sobrevivencia" type="number"></div>
+    <div><label>TÁTICA*(INT)</label><input id="tatica" type="number"></div>
+    <div><label>TECNOLOGIA(INT)</label><input id="tecnologia" type="number"></div>
+    <div><label>VONTADE(PRE)</label><input id="vontade" type="number"></div>
+</div>
+<h1>Habilidades</h1>
+
+<label>ORIGEM/TRILHA<textarea id="trilha"></textarea>
+<label>CLASSE<textarea id="proeficiencias"></textarea>
+
+<h1>Equipamentos</h1>
+<label>INVENTARIO<textarea id="inventario"></textarea>
+<label>PROTEÇÕES<textarea id="protecoes"></textarea>
+
+<h1>Rituais</h1>
+<div class="grid">
+    <div><label>DT RITUAIS</label><input id="dtrituais" type="number"></div>
+</div>
+<label>1ª CIRCULO<textarea id="rituaisum"></textarea>
+<label>2ª CIRCULO<textarea id="rituaisdois"></textarea>
+<label>3ª CIRCULO<textarea id="rituaistres"></textarea>
+<label>4ª CIRCULO<textarea id="rituaisquatro"></textarea>
+
+
+<H1>DESCRIÇÃO</H1>
+<div>
+    <div><label>ANOTAÇÕES</label><textarea id="anotacoes"></textarea></div>
+    <div><label>APARÊNCIA</label><textarea id="aparencia"></textarea></div>
+    <div><label>PERSONALIDADE</label><textarea id="personalidade"></textarea></div>
+    <div><label>HISTORICO</label><textarea id="historia"></textarea></div>
+    <div><label>OBJETIVO</label><textarea id="objetivo"></textarea></div>
+</div>
+
+    
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getDatabase, ref, update, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+const app = initializeApp({
+  apiKey: "AIzaSyBMVwdbElv-M6z-TUBG-HJvKA0PUen_LGg",
+  authDomain: "gerencidor.firebaseapp.com",
+  databaseURL: "https://gerencidor-default-rtdb.firebaseio.com"
+});
+
+const db = getDatabase(app);
+const id = new URLSearchParams(location.search).get("id");
+
+const $ = (id) => document.getElementById(id);
+
+let carregando = true;
+let editando = false;
+
+/* ================= AUTO RESIZE ================= */
+function autoResize(el){
+  el.style.height = "auto";
+  el.style.height = el.scrollHeight + "px";
+}
+
+function aplicarResize(){
+  document.querySelectorAll("textarea").forEach(autoResize);
+}
+
+document.querySelectorAll("textarea").forEach(el => {
+  el.addEventListener("input", () => autoResize(el));
+});
+
+/* ================= CONTROLE ================= */
+document.querySelectorAll("input, textarea").forEach(el => {
+  el.addEventListener("focus", () => editando = true);
+  el.addEventListener("blur", () => editando = false);
+});
+
+/* ================= LOAD ================= */
+onValue(ref(db, "personagens/" + id), (snap) => {
+  if (!snap.exists() || editando) return;
+
+  const p = snap.val();
+
+  const i = p.dados?.info || {};
+  const c = p.dados?.combate || {};
+  const a = p.dados?.atributos || {};
+  const per = p.pericias || {};
+  const e = p.extras || {};
+  const r = p.rituais || {}; 
+  /* INFO */
+  $("nome").value = i.nome || "";
+  $("classe").value = i.classe || "";
+  $("origem").value = i.origem || "";
+
+  /* COMBATE */
+  $("hp_atual").value = c.hp_atual || 0;
+  $("hp_max").value = c.hp_max || 0;
+
+  $("san_atual").value = c.san_atual || 0;
+  $("san_max").value = c.san_max || 0;
+
+  $("pe_atual").value = c.pe_atual || 0;
+  $("pe_max").value = c.pe_max || 0;
+  $("pd_atual").value = c.pd_atual || 0;
+  $("pd_max").value = c.pd_max || 0;
+
+  $("defesa").value = c.defesa || 0;
+  $("bloqueio").value = c.bloqueio || 0;
+  $("esquiva").value = c.esquiva || 0;
+
+  $("arma1").value = c.arma1 || "";
+  $("arma2").value = c.arma2 || "";
+  $("arma3").value = c.arma3 || "";
+
+  /* TURNOS */
+  const turnos = document.querySelectorAll("#pepdturno");
+  if (turnos[0]) turnos[0].value = c.pe_turno || 0;
+  if (turnos[1]) turnos[1].value = c.pd_turno || 0;
+
+  /* ATRIBUTOS */
+  ["for","agi","int","vig","pre","desl","nivel","nex"].forEach(k=>{
+    if($(k)) $(k).value = a[k] || 0;
+  });
+
+  /* PERICIAS */
+  Object.entries(per).forEach(([k,v])=>{
+    if($(k)) $(k).value = v;
+  });
+
+  /* EXTRAS */
+  $("trilha").value = e.trilha || "";
+  $("proeficiencias").value = e.proeficiencias || "";
+  $("inventario").value = e.inventario || "";
+  $("protecoes").value = e.protecoes || "";
+
+  /*  RITUAIS */
+  $("dtrituais").value = r.dtrituais || 0;
+  $("rituaisum").value = r.rituais1 || "";
+  $("rituaisdois").value = r.rituais2 || "";
+  $("rituaistres").value = r.rituais3 || "";
+  $("rituaisquatro").value = r.rituais4 || "";
+
+  /* DESCRIÇÃO */
+  $("anotacoes").value = e.anotacoes || "";
+  $("aparencia").value = e.aparencia || "";
+  $("personalidade").value = e.personalidade || "";
+  $("historia").value = e.historia || "";
+  $("objetivo").value = e.objetivo || "";
+
+  aplicarResize();
+
+  carregando = false;
+});
+
+/* ================= SAVE ================= */
+document.querySelectorAll("input, textarea").forEach(el => {
+  el.addEventListener("input", async () => {
+
+    if(el.tagName === "TEXTAREA") autoResize(el);
+    if (carregando || !id) return;
+
+    const idf = el.id;
+    const v = el.value;
+    const val = v === "" ? "" : (isNaN(v) ? v : Number(v));
+
+    let path = "";
+    let key = idf;
+
+   
+    if (["nome","classe","origem"].includes(idf)){
+      path = "dados/info";
+    }
+
+    else if([
+      "hp_atual","hp_max",
+      "san_atual","san_max",
+      "pe_atual","pe_max",
+      "pd_atual","pd_max",
+      "defesa","bloqueio","esquiva",
+      "arma1","arma2","arma3"
+    ].includes(idf)){
+      path = "dados/combate";
+    }
+
+
+    else if (idf === "pepdturno"){
+      const turnos = document.querySelectorAll("#pepdturno");
+
+      await update(ref(db,"personagens/"+id+"/dados/combate"), {
+        pe_turno: Number(turnos[0]?.value || 0),
+        pd_turno: Number(turnos[1]?.value || 0)
+      });
+      return;
+    }
+
+    /* ATRIBUTOS */
+    else if([
+      "for","agi","int","vig","pre","desl","nivel","nex"
+    ].includes(idf)){
+      path = "dados/atributos";
+    }
+
+    /* PERICIAS */
+    else if([
+      "acobracia","adestramento","artes","atletismo","ciencias","crime",
+      "diplomacia","enganacao","fortitude","furtividade","iniciativa",
+      "intimidacao","intuicao","investigacao","luta","medicina",
+      "ocultismo","pilotagem","reflexos","religiao","sobrevivencia",
+      "tatica","tecnologia","vontade"
+    ].includes(idf)){
+      path = "pericias";
+    }
+
+    else if([
+      "dtrituais","rituaisum","rituaisdois","rituaistres","rituaisquatro"
+    ].includes(idf)){
+
+      const map = {
+        dtrituais: "dtrituais",
+        rituaisum: "rituais1",
+        rituaisdois: "rituais2",
+        rituaistres: "rituais3",
+        rituaisquatro: "rituais4"
+      };
+
+      await update(ref(db,"personagens/"+id+"/rituais"), {
+        [map[idf]]: val
+      });
+      return;
+    }
+
+    /* EXTRAS */
+    else{
+      path = "extras";
+    }
+
+    await update(ref(db,"personagens/"+id+"/"+path), {
+      [key]: val
+    });
+
+  });
+});
+</script>>
+
+</body>
+</html>
