@@ -1,2 +1,1 @@
-# codicefichas
-pessoal
+Apenas um projeto pessoal, nada muito relevante
