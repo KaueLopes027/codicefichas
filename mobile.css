@@ -62,7 +62,7 @@ h3{
 
 .gridatb{
     display:grid;
-    grid-template-columns:repeat(3,400px);
+    grid-template-columns:repeat(3,100px);
     gap:30px;
 
 }
