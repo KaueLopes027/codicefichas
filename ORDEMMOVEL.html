@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FICHA ORDEM CODICE MOBILE </title>
+<link rel="stylesheet" href="mobile.css">
+
+</head>
+
+<body>
+
+<header>FICHA ORDEM CODICE MOBILE </header>
+
+<div class="tabs">
+<button onclick="showTab('info')">INFO</button>
+<button onclick="showTab('combat')">COMBATE</button>
+<button onclick="showTab('skills')">PERICIAS</button>
+<button onclick="showTab('habilidades')">HABILIDADES</button>
+<button onclick="showTab('rituais')">RITUAIS</button>
+<button onclick="showTab('inventario')">INVENTARIO</button>
+<button onclick="showTab('extra')">EXTRA</button>
+</div>
+
+
+<!-- INFO -->
+<div id="info" class="tab">
+<label>NOME</label><input id="nome" placeholder="Nome">
+<label>CLASSE</label><input id="classe" placeholder="Classe">
+<label>ORIGEM</label><input id="objetivo" placeholder="Origem">
+</div>
+
+<!-- COMBATE -->
+<div id="combat" class="tab">
+
+<h3>Recursos</h3>
+<div class="grid">
+<div><label>HP ATUAL</label><input id="hp_atual" type="number" placeholder="HP Atual"></div>
+<div><label>HP MAX</label><input id="hp_max" type="number" placeholder="HP Máx"></div>
+
+<div><label>SANIDADE ATUAL</label><input id="san_atual" type="number" placeholder="SAN Atual"></div>
+<div><label>SANIDADE MAX</label><input id="san_max" type="number" placeholder="SAN Máx"></div>
+
+<div><label>PE ATUAL</label><input id="pe_atual" type="number" placeholder="PE Atual"></div>
+<div><label>PE MAX</label><input id="pe_max" type="number" placeholder="PE Máx"></div>
+
+<div><label>PE TURNO</label><input id="pe_turno" type="number" placeholder="PE Turno"></div>
+<div><label>Pd ATUAL</label><input id="pd_atual" type="number" placeholder="PD Atual"></div>
+
+<div><label>PD Max</label><input id="pd_max" type="number" placeholder="PD Máx"></div>
+<div><label>PE/PD TURNO</label><input id="pd_turno" type="number" placeholder="PD Turno"></div>
+</div>
+
+<h3>Defesa</h3>
+<div class="grid">
+<div><label>Defesa</label><input id="defesa" type="number" placeholder="Defesa"></div>
+<div><label>Bloqueio</label><input id="bloqueio" type="number" placeholder="Bloqueio"></div>
+<div><label>Esquiva</label><input id="esquiva" type="number" placeholder="Esquiva"></div>
+</div>
+
+<h3>Armas</h3>
+<div><label>Arma 1</label><input id="arma1" placeholder="Arma 1"></div>
+<div><label>Arma 2</label><input id="arma2" placeholder="Arma 2"></div>
+<div><label>Arma 3</label><input id="arma3" placeholder="Arma 3"></div>
+
+<H3> PERICIAS COMBATE</H3>
+<div class="gridatb">
+<div><label>LUTA (FOR)</label><input id="luta"></div>
+<div><label>PONTARIA (AGI)</label><input id="pontaria"></div>
+<div><label>INICIATIVA (AGI)</label><input id="iniciativa"></div>
+<div><label>FORTITUDE (VIG)</label><input id="fortitude"></div>
+<div><label>REFLEXOS (AGI)</label><input id="reflexos"></div>
+<div><label>VONTADE (PRE)</label><input id="vontade"></div>
+
+</div>
+
+<h3>Atributos</h3>
+<div class="grid">
+<div><label>FORÇA (FOR)</label><input id="for" type="number" placeholder="FOR"></div>
+<div><label>AGILIDADE (AGI)</label><input id="agi" type="number" placeholder="AGI"></div>
+<div><label>INTELIGENCIA (INT)</label><input id="int" type="number" placeholder="INT"></div>
+<div><label>VIGOR (VIG)</label><input id="vig" type="number" placeholder="VIG"></div>
+<div><label>PRESENÇA (PRE)</label><input id="pre" type="number" placeholder="PRE"></div>
+<div><label>DESLOCAMENTO</label><input id="desl" type="number" placeholder="DESL"></div>
+<div><label>NIVEL</label><input id="nivel" type="number" placeholder="Nível"></div>
+<div><label>NEX</label><input id="nex" type="number" placeholder="NEX"></div>
+</div>
+
+</div>
+
+<!-- SKILLS -->
+<div id="skills" class="tab">
+<h3>Perícias</h3>
+<div class="gridatb">
+<div><label>ACROBACIA+ (AGI)</label><input id="acobracia"></div>
+<div><label>ADESTRAMENTO* (PRE)</label><input id="adestramento"></div>
+<div><label>ARTES* (PRE)</label><input id="artes"></div>
+<div><label>ATLETISMO (FOR)</label><input id="atletismo"></div>
+<div><label>ATUALIDADES (INT)</label><input id="atualidades"></div>
+<div><label>CIÊNCIAS* (AGI)</label><input id="ciencias"></div>
+<div><label>CRIME*+ (AGI)</label><input id="crime"></div>
+<div><label>DIPLOMACIA (PRE)</label><input id="diplomacia"></div>
+<div><label>ENGANAÇÃO (PRE)</label><input id="enganacao"></div>
+<div><label>FORTITUDE (VIG)</label><input id="fortitude"></div>
+<div><label>FURTIVIDADE+ (AGI)</label><input id="furtividade"></div>
+<div><label>INICIATIVA (AGI)</label><input id="iniciativa"></div>
+<div><label>INTIMIDAÇÃO (PRE)</label><input id="intimidacao"></div>
+<div><label>INTUIÇÃO (PRE)</label><input id="intuicao"></div>
+<div><label>INVESTIGAÇÃO (INT)</label><input id="investigacao"></div>
+<div><label>LUTA (FOR)</label><input id="luta"></div>
+<div><label>MEDICINA (INT)</label><input id="medicina"></div>
+<div><label>OCULTISMO*(INT)</label><input id="ocultismo"></div>
+<div><label>PERCEPÇÃO (PRE)</label><input id="percepcao"></div>
+<div><label>PILOTAGEM* (AGI)</label><input id="pilotagem"></div>
+<div><label>PONTARIA (AGI)</label><input id="pontaria"></div>
+<div><label>PROFISSÃO* (INT)</label><input id="profissao"></div>
+<div><label>REFLEXOS (AGI)</label><input id="reflexos"></div>
+<div><label>RELIGIÃO (PRE)</label><input id="religiao"></div>
+<div><label>SOBREVIVENCIA (INT)</label><input id="sobrevivencia"></div>
+<div><label>TÁTICA* (INT)</label><input id="tatica"></div>
+<div><label>TECNOLOGIA* (INT)</label><input id="tecnologia"></div>
+<div><label>VONTADE (PRE)</label><input id="vontade"></div>
+</div>
+</div>
+<!-- EXTRA -->
+
+<div id="habilidades" class="tab">
+<h3>Habilidades</h3>
+<label>ORIGEM/TRILHA</label><textarea id="ativas"></textarea>
+<label>CLASSE</label><textarea id="passivas"></textarea>
+</div>
+
+<div id="inventario" class="tab">
+<h3>Equipamentos</h3>
+<label>INVENTARIO</label><textarea id="proeficiencias"></textarea>
+<label>ARMAS E PROTEÇÕES</label><textarea id="protecoes"></textarea>
+</div>
+<div id="rituais" class="tab">
+<h3>Rituais</h3>
+
+<label>DT RITUAIS</label><input id="dtrituais">
+<label>1ª CIRCULO</label><textarea id="rituaisum"></textarea>
+<label>2ª CIRCULO</label><textarea id="rituaisdois"></textarea>
+<label>3ª CIRCULO</label><textarea id="rituaistres"></textarea>
+<label>4ª CIRCULO</label><textarea id="rituaisquatro"></textarea>
+</div>
+<div id="extra" class="tab">
+<h3>Descrição</h3>
+<LABEL>ANOTAÇÕES</LABEL><textarea id="anotacoes"></textarea>
+<LABEL>APARENCIA</LABEL><textarea id="aparencia"></textarea>
+<LABEL>PERSONALIDADE</LABEL><textarea id="personalidade"></textarea>
+<LABEL>HISTORIA</LABEL><textarea id="historia"></textarea>
+</div>
+
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getDatabase, ref, onValue, update } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+/* FIREBASE */
+const app = initializeApp({
+  apiKey: "SUA_API_KEY",
+  authDomain: "gerencidor.firebaseapp.com",
+  databaseURL: "https://gerencidor-default-rtdb.firebaseio.com"
+});
+
+const db = getDatabase(app);
+const id = new URLSearchParams(location.search).get("id");
+
+const $ = id => document.getElementById(id);
+
+let carregando = true;
+
+/* TAB */
+window.showTab = function(tab){
+    document.querySelectorAll(".tab").forEach(t=>t.style.display="none");
+    const el = document.getElementById(tab);
+    if(el) el.style.display = "block";
+};
+
+window.onload = ()=> showTab("info");
+
+/* LOAD */
+if(id){
+onValue(ref(db,"personagens/"+id), snap=>{
+    if(!snap.exists()) return;
+
+    const p = snap.val();
+    const i = p.dados?.info || {};
+    const c = p.dados?.combate || {};
+    const a = p.dados?.atributos || {};
+    const e = p.extras || {};
+
+    /* INFO */
+    $("nome").value = i.nome || "";
+    $("classe").value = i.classe || "";
+    $("objetivo").value = i.origem || "";
+
+    /* COMBATE */
+    [
+        "hp_atual","hp_max","san_atual","san_max",
+        "pe_atual","pe_max","pe_turno",
+        "pd_atual","pd_max","pd_turno",
+        "defesa","bloqueio","esquiva"
+    ].forEach(k=>{
+        if($(k)) $(k).value = c[k] ?? 0;
+    });
+
+    ["arma1","arma2","arma3"].forEach(k=>{
+        if($(k)) $(k).value = c[k] || "";
+    });
+
+    /* ATRIBUTOS */
+    ["for","agi","int","vig","pre","desl","nivel","nex"].forEach(k=>{
+        if($(k)) $(k).value = a[k] ?? 0;
+    });
+
+    /* PERÍCIAS (CORRIGIDO DEFINITIVO) */
+    const skillsInputs = document.querySelectorAll("#skills input");
+
+    const periciasBase = [
+        "acobracia","adestramento","artes","atletismo","atualidades","ciencias","crime",
+        "diplomacia","enganacao","fortitude","furtividade","iniciativa",
+        "intimidacao","intuicao","investigacao",
+        "luta","luta2",
+        "medicina","ocultismo","percepcao","pilotagem",
+        "pontaria","pontaria2",
+        "profissao",
+        "reflexos","reflexos2",
+        "religiao","sobrevivencia",
+        "tatica","tecnologia",
+        "vontade","vontade2"
+    ];
+
+    skillsInputs.forEach((el, index)=>{
+        const key = periciasBase[index];
+        if(key && p.pericias?.[key] !== undefined){
+            el.value = p.pericias[key];
+        }
+    });
+
+    /* EXTRAS */
+    [
+        "proeficiencias","ativas","passivas","protecoes",
+        "rituaisum","rituaisdois","rituaistres","rituaisquatro",
+        "anotacoes","aparencia","personalidade","historia"
+    ].forEach(k=>{
+        if($(k)) $(k).value = e[k] || "";
+    });
+
+    $("dtrituais").value = e.dtrituais || "";
+
+    carregando = false;
+});
+}
+
+/* SAVE */
+document.querySelectorAll("input, textarea").forEach(el=>{
+    el.addEventListener("input", ()=>{
+
+        if(carregando || !id) return;
+
+        const idf = el.id;
+        const v = el.value;
+        const val = v === "" ? "" : (isNaN(v) ? v : Number(v));
+
+        /* ================= INFO ================= */
+        if(["nome","classe","objetivo"].includes(idf)){
+            update(ref(db,"personagens/"+id+"/dados/info"), {
+                [idf === "objetivo" ? "origem" : idf]: val
+            });
+            return;
+        }
+
+        /* ================= COMBATE ================= */
+        const combate = [
+            "hp_atual","hp_max","san_atual","san_max",
+            "pe_atual","pe_max","pe_turno",
+            "pd_atual","pd_max","pd_turno",
+            "defesa","bloqueio","esquiva",
+            "arma1","arma2","arma3"
+        ];
+
+        if(combate.includes(idf)){
+            update(ref(db,"personagens/"+id+"/dados/combate"), {
+                [idf]: val
+            });
+            return;
+        }
+
+        /* ================= ATRIBUTOS ================= */
+        const atributos = ["for","agi","int","vig","pre","desl","nivel","nex"];
+
+        if(atributos.includes(idf)){
+            update(ref(db,"personagens/"+id+"/dados/atributos"), {
+                [idf]: val
+            });
+            return;
+        }
+
+        /* ================= PERÍCIAS (AGORA 100% ESTÁVEL) ================= */
+        const skillsInputs = document.querySelectorAll("#skills input");
+
+        const periciasBase = [
+            "acobracia","adestramento","artes","atletismo","atualidades","ciencias","crime",
+            "diplomacia","enganacao","fortitude","furtividade","iniciativa",
+            "intimidacao","intuicao","investigacao",
+            "luta","luta2",
+            "medicina","ocultismo","percepcao","pilotagem",
+            "pontaria","pontaria2",
+            "profissao",
+            "reflexos","reflexos2",
+            "religiao","sobrevivencia",
+            "tatica","tecnologia",
+            "vontade","vontade2"
+        ];
+
+        const index = Array.from(skillsInputs).indexOf(el);
+        const key = periciasBase[index];
+
+        if(key){
+            update(ref(db,"personagens/"+id+"/pericias"), {
+                [key]: val
+            });
+            return;
+        }
+
+        /* ================= EXTRAS ================= */
+        update(ref(db,"personagens/"+id+"/extras"), {
+            [idf]: val
+        });
+
+    });
+});
+</script>
+
+</body>
+</html>
