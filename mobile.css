@@ -68,7 +68,7 @@ h3{
 }
 .gridper{
     display:grid;
-    grid-template-columns:repeat(3,400pxr);
+    grid-template-columns:repeat(3,20pxr);
     gap:60px;
 
 }
