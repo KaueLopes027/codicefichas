@@ -1,1 +1,270 @@
-adeus
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gerenciador RPG</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #0f0f0f;
+    color: white;
+    margin: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.topbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    width: 200px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #7c3aed;
+    color: white;
+}
+
+button:hover {
+    background: #6d28d9;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card:hover {
+    background: #222;
+}
+
+.info {
+    cursor: pointer;
+}
+
+.actions button {
+    background: #991b1b;
+}
+
+.actions button:hover {
+    background: #7f1d1d;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Gerenciador de Personagens</h2>
+
+<div class="topbar">
+    <button onclick="criarPersonagem()">➕ Novo</button>
+    <button onclick="carregar()">🔄 Atualizar</button>
+    <input id="busca" placeholder="Buscar nome...">
+</div>
+
+<div id="lista"></div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getDatabase, ref, set, get, child, remove } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+/* CONFIG */
+const firebaseConfig = {
+  apiKey: "AIzaSyBMVwdbElv-M6z-TUBG-HJvKA0PUen_LGg",
+  authDomain: "gerencidor.firebaseapp.com",
+  databaseURL: "https://gerencidor-default-rtdb.firebaseio.com"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+/* GLOBAL */
+window.db = db;
+window.ref = ref;
+window.set = set;
+window.get = get;
+window.child = child;
+window.remove = remove;
+
+/* DETECTA MOBILE */
+window.isMobile = () => {
+  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+};
+</script>
+
+<script>
+
+/* ================= GERAR ID ================= */
+async function gerarID() {
+    const refCont = ref(db, "contador");
+    const snap = await get(refCont);
+
+    let id = snap.exists() ? snap.val() + 1 : 1;
+    await set(refCont, id);
+
+    return id;
+}
+
+/* ================= CRIAR PERSONAGEM ================= */
+async function criarPersonagem() {
+
+    const id = await gerarID();
+
+    await set(ref(db, "personagens/" + id), {
+        id,
+        tipo: "ordem",
+
+        nome: "Novo Personagem",
+        origem: "",
+        classe: "",
+
+        atributos: {
+            agi: 0,
+            for: 0,
+            int: 0,
+            vig: 0,
+            pre: 0,
+            nivel: 0,
+            nex: 0
+        },
+
+        combate: {
+            deslocamento: 0,
+            hp_max: 0,
+            hp_atual: 0,
+            pdpeturno: 0,
+            pd_atual: 0,
+            pd_max: 0,
+            pe_atual: 0,
+            pe_max: 0,
+            san_atual: 0,
+            san_max: 0,
+
+            defesa: 0,
+            defesa_equip: 0,
+            defesa_outros: 0,
+
+            bloqueio: 0,
+            esquiva: 0,
+            resistencias: "",
+
+            armas: {
+                arma1: "",
+                arma2: "",
+                arma3: "",
+                arma4: "",
+                arma5: ""
+            }
+        },
+
+        pericias: {},
+        habilidades: {},
+        equipamentos: {},
+        rituais: {},
+        descricao: {}
+    });
+
+    carregar();
+}
+
+/* ================= DELETAR ================= */
+async function deletar(id){
+    if(!confirm("Apagar personagem?")) return;
+
+    await remove(ref(db, "personagens/" + id));
+    carregar();
+}
+
+/* ================= ABRIR FICHA ================= */
+function abrirFicha(id){
+    if(isMobile()){
+        window.location.href = "ORDEMMOVEL.html?id=" + id;
+    } else {
+        window.location.href = "ORDEMPC.html?id=" + id;
+    }
+}
+
+/* ================= CARREGAR LISTA ================= */
+async function carregar(){
+
+    const lista = document.getElementById("lista");
+    const buscaInput = document.getElementById("busca").value.toLowerCase();
+
+    lista.innerHTML = "Carregando...";
+
+    const snap = await get(child(ref(db), "personagens"));
+
+    if(!snap.exists()){
+        lista.innerHTML = "<p>Nenhum personagem</p>";
+        return;
+    }
+
+    lista.innerHTML = "";
+
+    const data = snap.val();
+
+    Object.entries(data).forEach(([id, p]) => {
+
+        /* IGNORA TEMPLATE (ex: "ordem") */
+        if (isNaN(id)) return;
+
+        const nome = p.nome || "Sem nome";
+        const idStr = String(id);
+
+        /* BUSCA */
+        if (buscaInput) {
+
+            const matchNome = nome.toLowerCase().includes(buscaInput);
+            const matchID = !isNaN(buscaInput) && idStr.includes(buscaInput);
+
+            if (!matchNome && !matchID) return;
+        }
+
+        const div = document.createElement("div");
+        div.className = "card";
+
+        div.innerHTML = `
+            <div class="info">
+                <strong>${nome}</strong><br>
+                <small>ID: ${id}</small>
+            </div>
+
+            <div class="actions">
+                <button onclick="event.stopPropagation(); deletar(${id})">🗑</button>
+            </div>
+        `;
+
+        div.querySelector(".info").onclick = () => abrirFicha(id);
+
+        lista.appendChild(div);
+    });
+}
+
+/* ================= BUSCA EM TEMPO REAL ================= */
+document.getElementById("busca").addEventListener("input", carregar);
+
+/* INIT */
+window.onload = carregar;
+
+</script>
+
+</body>
+</html>
